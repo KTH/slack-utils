@@ -31,7 +31,7 @@ async function separate(filename) {
   let externalDomainsMultiChannel = [
     "# Active users that are multi channel members and registred using a external domain (not kth.se).",
   ];
-  let bots = [];
+  let bots = ["# Configured bots."];
 
   let users = await fileUtil.readUsers(filename);
 
@@ -67,15 +67,18 @@ async function separate(filename) {
   });
 
   // Regular users
-
   fileUtil.write("kthse-account.txt", kthseAccounts.join("\n"));
-  console.log(`${kthseAccounts[0]} - ${kthseAccounts.length} users.`);
+  console.log(
+    `${new Date()} - ${kthseAccounts[0]} - ${kthseAccounts.length} users.`
+  );
 
   fileUtil.write("kth-domains.txt", kthDomains.join("\n"));
-  console.log(`${kthDomains[0]} - ${kthDomains.length} users.`);
+  console.log(`${new Date()} - ${kthDomains[0]} - ${kthDomains.length} users.`);
 
   fileUtil.write("external-domains.txt", externalDomains.join("\n"));
-  console.log(`${externalDomains[0]} - ${externalDomains.length} users.`);
+  console.log(
+    `${new Date()} - ${externalDomains[0]} - ${externalDomains.length} users.`
+  );
 
   // Single channels
   fileUtil.write(
@@ -83,14 +86,18 @@ async function separate(filename) {
     kthseAccountsSingleChannel.join("\n")
   );
   console.log(
-    `${kthseAccountsSingleChannel[0]} - ${kthseAccountsSingleChannel.length} users.`
+    `${new Date()} - ${kthseAccountsSingleChannel[0]} - ${
+      kthseAccountsSingleChannel.length
+    } users.`
   );
   fileUtil.write(
     "kth-domains-single-channel-member.txt",
     kthDomainsSingleChannel.join("\n")
   );
   console.log(
-    `${kthDomainsSingleChannel[0]} - ${kthDomainsSingleChannel.length} users.`
+    `${new Date()} - ${kthDomainsSingleChannel[0]} - ${
+      kthDomainsSingleChannel.length
+    } users.`
   );
 
   fileUtil.write(
@@ -98,7 +105,9 @@ async function separate(filename) {
     externalDomainsSingleChannel.join("\n")
   );
   console.log(
-    `${externalDomainsSingleChannel[0]} - ${externalDomainsSingleChannel.length} users.`
+    `${new Date()} - ${externalDomainsSingleChannel[0]} - ${
+      externalDomainsSingleChannel.length
+    } users.`
   );
 
   // Multi channel
@@ -107,14 +116,18 @@ async function separate(filename) {
     kthseAccountsMultiChannel.join("\n")
   );
   console.log(
-    `${kthseAccountsMultiChannel[0]} - ${kthseAccountsMultiChannel.length} users.`
+    `${new Date()} - ${kthseAccountsMultiChannel[0]} - ${
+      kthseAccountsMultiChannel.length
+    } users.`
   );
   fileUtil.write(
     "kth-domains-multi-channel-member.txt",
     kthDomainsMultiChannel.join("\n")
   );
   console.log(
-    `${kthDomainsMultiChannel[0]} - ${kthDomainsMultiChannel.length} users.`
+    `${new Date()} - ${kthDomainsMultiChannel[0]} - ${
+      kthDomainsMultiChannel.length
+    } users.`
   );
 
   fileUtil.write(
@@ -122,11 +135,14 @@ async function separate(filename) {
     externalDomainsMultiChannel.join("\n")
   );
   console.log(
-    `${externalDomainsMultiChannel[0]} - ${externalDomainsMultiChannel.length} users.`
+    `${new Date()} - ${externalDomainsMultiChannel[0]} - ${
+      externalDomainsMultiChannel.length
+    } users.`
   );
 
   // Bots
   fileUtil.write("bots.txt", bots.join("\n"));
+  console.log(`${new Date()} - ${bots[0]} - ${bots.length} users.`);
 
   return result;
 }
