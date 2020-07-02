@@ -38,9 +38,21 @@ async function readUsers(filename) {
   let result = [];
   let usersLines = await lines(filename);
   usersLines.forEach((line) => {
-    result.push(toArray(line));
+    let user = toArray(line);
+    if (isActive(user)) {
+      result.push(user);
+    }
   });
   return result;
+}
+
+function isActive(user) {
+  //index 2 is status
+  if (user[2] == "Deactivated") {
+    console.log(`${user[1]} is Deactivated`);
+    return false;
+  }
+  return true;
 }
 
 function toArray(line, splitter = ",") {
