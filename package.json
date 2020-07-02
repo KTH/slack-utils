@@ -1,0 +1,24 @@
+{
+  "name": "slack-utils",
+  "version": "1.0.0",
+  "description": "Utils for KTH Slack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KTH/slack-utils.git"
+  },
+  "keywords": [
+    "slack",
+    "utils",
+    "scripts"
+  ],
+  "author": "paddy@kths.e",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KTH/slack-utils/issues"
+  },
+  "homepage": "https://github.com/KTH/slack-utils#readme"
+}

@@ -102,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Dir containing inputs (unless overridden by process.env.DATA_DIRECTORY)
+data/
